@@ -1,11 +1,11 @@
-# Force GitHub to ignore ALL HTML files for language detection
-*.html linguist-detectable=false
-index.html linguist-detectable=false
-
 # Tell GitHub to ignore build/generated files completely
 dist/* linguist-generated=true
 node_modules/* linguist-vendored=true
 package-lock.json linguist-generated=true
+
+# Allow HTML detection but mark built HTML as generated
+index.html linguist-language=HTML linguist-detectable=true
+dist/*.html linguist-generated=true
 
 # Force JavaScript detection with high priority
 *.js linguist-language=JavaScript linguist-detectable=true
