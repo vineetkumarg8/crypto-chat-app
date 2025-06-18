@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
   "homepage": "https://vineetkumarg8.github.io/crypto-chat-app",
   "scripts": {
     "dev": "vite",
