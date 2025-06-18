@@ -1,0 +1,13 @@
+# Tell GitHub to ignore the dist folder and gh-pages branch for language detection
+dist/* linguist-generated=true
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+
+# Ensure JavaScript and JSX files are properly detected
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+
+# Mark package-lock.json as generated
+package-lock.json linguist-generated=true
