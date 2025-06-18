@@ -1,23 +1,29 @@
-# Tell GitHub to ignore build/generated files for language detection
+# Force GitHub to ignore ALL HTML files for language detection
+*.html linguist-detectable=false
+index.html linguist-detectable=false
+
+# Tell GitHub to ignore build/generated files completely
 dist/* linguist-generated=true
 node_modules/* linguist-vendored=true
 package-lock.json linguist-generated=true
 
-# Ensure source files are properly detected and prioritized
-src/**/*.js linguist-language=JavaScript
-src/**/*.jsx linguist-language=JavaScript
-src/**/*.ts linguist-language=TypeScript
-src/**/*.tsx linguist-language=TypeScript
-src/**/*.css linguist-language=CSS
-*.js linguist-language=JavaScript
-*.jsx linguist-language=JavaScript
-*.css linguist-language=CSS
+# Force JavaScript detection with high priority
+*.js linguist-language=JavaScript linguist-detectable=true
+*.jsx linguist-language=JavaScript linguist-detectable=true
+*.mjs linguist-language=JavaScript linguist-detectable=true
+src/**/*.js linguist-language=JavaScript linguist-detectable=true
+src/**/*.jsx linguist-language=JavaScript linguist-detectable=true
 
-# Mark config files appropriately
-vite.config.js linguist-language=JavaScript
-tailwind.config.js linguist-language=JavaScript
-eslint.config.js linguist-language=JavaScript
-postcss.config.js linguist-language=JavaScript
+# Force CSS detection
+*.css linguist-language=CSS linguist-detectable=true
+src/**/*.css linguist-language=CSS linguist-detectable=true
 
-# Only ignore built HTML files, not source HTML
-dist/*.html linguist-generated=true
+# Mark TypeScript files (if any)
+*.ts linguist-language=TypeScript linguist-detectable=true
+*.tsx linguist-language=TypeScript linguist-detectable=true
+
+# Ensure config files are detected as JavaScript
+vite.config.js linguist-language=JavaScript linguist-detectable=true
+tailwind.config.js linguist-language=JavaScript linguist-detectable=true
+eslint.config.js linguist-language=JavaScript linguist-detectable=true
+postcss.config.js linguist-language=JavaScript linguist-detectable=true
