@@ -1,13 +1,23 @@
-# Tell GitHub to ignore the dist folder and gh-pages branch for language detection
+# Tell GitHub to ignore build/generated files for language detection
 dist/* linguist-generated=true
-*.html linguist-detectable=false
-*.css linguist-detectable=false
+node_modules/* linguist-vendored=true
+package-lock.json linguist-generated=true
 
-# Ensure JavaScript and JSX files are properly detected
+# Ensure source files are properly detected and prioritized
+src/**/*.js linguist-language=JavaScript
+src/**/*.jsx linguist-language=JavaScript
+src/**/*.ts linguist-language=TypeScript
+src/**/*.tsx linguist-language=TypeScript
+src/**/*.css linguist-language=CSS
 *.js linguist-language=JavaScript
 *.jsx linguist-language=JavaScript
-*.ts linguist-language=TypeScript
-*.tsx linguist-language=TypeScript
+*.css linguist-language=CSS
 
-# Mark package-lock.json as generated
-package-lock.json linguist-generated=true
+# Mark config files appropriately
+vite.config.js linguist-language=JavaScript
+tailwind.config.js linguist-language=JavaScript
+eslint.config.js linguist-language=JavaScript
+postcss.config.js linguist-language=JavaScript
+
+# Only ignore built HTML files, not source HTML
+dist/*.html linguist-generated=true
